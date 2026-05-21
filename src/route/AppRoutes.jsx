@@ -20,12 +20,18 @@ export default function AppRoutes() {
             <Route path="/reset-password/:token" element={<ResetPassword />} />
 
             {/* Protected Routes */}
-            <Route path="/" element={
-                <ProtectedRoute>
-                    <Dashboard />
-                </ProtectedRoute>
-            }
-            />
+            <Route
+                path="/"
+                element={
+                    <ProtectedRoute>
+                        <Dashboard />
+                    </ProtectedRoute>
+                }
+            >
+                <Route index element={<TodoList />} />
+                <Route path="users" element={<Users />} />
+                <Route path="home" element={<Home />} />
+            </Route>
 
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />

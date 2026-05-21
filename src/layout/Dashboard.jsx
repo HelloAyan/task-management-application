@@ -9,8 +9,10 @@ const Dashboard = () => {
         <div className="w-full h-auto">
             <Header />
             <div className='w-full h-auto flex'>
-                <div className='w-20'> hello</div>
-                <TodoList />
+                <div className='w-40'>
+                    <Sidebar />
+                </div>
+                <Outlet />
             </div>
 
         </div>
