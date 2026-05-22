@@ -10,6 +10,7 @@ import NotFound from "../Pages/NotFound";
 import Dashboard from "../layout/Dashboard";
 import Home from "../Pages/Home";
 import Users from "../Pages/Users/Users";
+import Task from "../Pages/Task/Task";
 
 export default function AppRoutes() {
     return (
@@ -31,6 +32,7 @@ export default function AppRoutes() {
                 <Route index element={<TodoList />} />
                 <Route path="users" element={<Users />} />
                 <Route path="home" element={<Home />} />
+                <Route path="/tasks" element={<Task />} />
             </Route>
 
             {/* 404 Route */}

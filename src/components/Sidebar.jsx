@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { MdDashboard, MdSettings } from "react-icons/md";
+import { FaTasks } from "react-icons/fa";
+import { BsCheckCircleFill } from "react-icons/bs";
 
 export default function Sidebar() {
     return (
@@ -8,34 +11,42 @@ export default function Sidebar() {
                 Dashboard
             </h2>
 
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-4 text-gray-700">
 
+                {/* Overview */}
                 <Link
-                    to="/dashboard"
-                    className="text-gray-700 hover:text-blue-600"
+                    to="/"
+                    className="flex items-center gap-3 hover:text-blue-600 transition"
                 >
-                    📊 Overview
+                    <MdDashboard className="text-xl" />
+                    <span>Overview</span>
                 </Link>
 
+                {/* Assigned Tasks */}
                 <Link
                     to="/tasks"
-                    className="text-gray-700 hover:text-blue-600"
+                    className="flex items-center gap-3 hover:text-blue-600 transition"
                 >
-                    ✅ My Tasks
+                    <FaTasks className="text-lg" />
+                    <span>Assigned Tasks</span>
                 </Link>
 
+                {/* Completed */}
                 <Link
                     to="/completed"
-                    className="text-gray-700 hover:text-blue-600"
+                    className="flex items-center gap-3 hover:text-green-600 transition"
                 >
-                    ✔ Completed
+                    <BsCheckCircleFill className="text-lg text-green-500" />
+                    <span>Completed</span>
                 </Link>
 
+                {/* Settings */}
                 <Link
                     to="/settings"
-                    className="text-gray-700 hover:text-blue-600"
+                    className="flex items-center gap-3 hover:text-blue-600 transition"
                 >
-                    ⚙ Settings
+                    <MdSettings className="text-xl" />
+                    <span>Settings</span>
                 </Link>
 
             </nav>
