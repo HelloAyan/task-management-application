@@ -11,6 +11,8 @@ import Dashboard from "../layout/Dashboard";
 import Home from "../Pages/Home";
 import Users from "../Pages/Users/Users";
 import Task from "../Pages/Task/Task";
+import Overview from "../Pages/Overview/Overview";
+import Settings from "../Pages/Setting/Setting";
 
 export default function AppRoutes() {
     return (
@@ -29,10 +31,13 @@ export default function AppRoutes() {
                     </ProtectedRoute>
                 }
             >
-                <Route index element={<TodoList />} />
+                {/* <Route index element={<TodoList />} /> */}
+                <Route index element={<Overview />} />
                 <Route path="users" element={<Users />} />
                 <Route path="home" element={<Home />} />
                 <Route path="/tasks" element={<Task />} />
+                <Route path="/add-task" element={<TodoList />} />
+                <Route path="/setting" element={<Settings />} />
             </Route>
 
             {/* 404 Route */}
